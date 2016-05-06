@@ -29,6 +29,8 @@ public class Manejador_VentanaPaises implements ActionListener
         {
             metodosPaises.agregarPaises(paises.devolverInformacion());
             paises.mostrarMensaje("El pais fue registrado de forma correcta");
+            System.out.println("Agregar");
+
         }
     }
             

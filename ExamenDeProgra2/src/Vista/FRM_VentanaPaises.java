@@ -6,18 +6,25 @@
 package Vista;
 
 import javax.swing.JOptionPane;
+import Controlador.Manejador_VentanaPaises;
+import Modelo.MetodosPaises;
 
 /**
  *
  * @author Administrador
  */
 public class FRM_VentanaPaises extends javax.swing.JFrame {
-
+    private MetodosPaises metodos;
+    
     /**
      * Creates new form FRM_VentanaPaises
      */
     public FRM_VentanaPaises() {
         initComponents();
+        this.metodos = new MetodosPaises();
+        
+        Manejador_VentanaPaises maneja = new Manejador_VentanaPaises(this, metodos);
+        btnAgregar.addActionListener(maneja);      
         
         
     }
@@ -54,8 +61,6 @@ public class FRM_VentanaPaises extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel1.setText("Nombre: ");
 
         jLabel2.setText("Codigo: ");
@@ -66,7 +71,6 @@ public class FRM_VentanaPaises extends javax.swing.JFrame {
             }
         });
 
-        btnAgregar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrador\\Desktop\\Ejercicio01\\src\\img\\agregar.png")); // NOI18N
         btnAgregar.setText("Agregar");
 
         txtArea.setColumns(20);
