@@ -45,7 +45,7 @@ public class Indigena
     
     public Object getInformacion ()
     {
-        return "Lugar de Procedencia: "+getLugarDeProcedencia()+"Dias: "+getDias()+"Pais Destino: "+getPaisDestino();
+        return "Lugar de Procedencia: "+getLugarDeProcedencia()+"Dias: "+getDias()+"Pais Destino: "+getPaisDestino()+"";
     }
     
     

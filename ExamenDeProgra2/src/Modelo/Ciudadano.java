@@ -29,7 +29,7 @@ public class Ciudadano extends Persona
     
     public String getInformacion ()
     {
-        return "ID: "+getId()+"Lugar de Procedencia: "+getLugarProcedencia()+"Destino: "+getDestino()+"Dias: "+getDias();
+        return "ID: "+getId()+"Lugar de Procedencia: "+getLugarProcedencia()+"Destino: "+getDestino()+"Dias: "+getDias()+"";
     }
     
 }
