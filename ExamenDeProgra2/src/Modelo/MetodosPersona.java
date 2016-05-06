@@ -25,7 +25,7 @@ public class MetodosPersona
         //agregarEstudiante(new String[] {"123","Lanfor","Puntarenas"});
     }
     
-    public void agregarEstudiante(String informacion[])
+    public void agregarPersona(String informacion[])
     {
         Persona objeto=new Persona(informacion[0], informacion[1], informacion[2]);
         arrayPersona.add(objeto); 

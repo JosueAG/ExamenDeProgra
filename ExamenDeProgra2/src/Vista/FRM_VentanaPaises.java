@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Administrador
@@ -16,6 +18,23 @@ public class FRM_VentanaPaises extends javax.swing.JFrame {
      */
     public FRM_VentanaPaises() {
         initComponents();
+        
+        
+    }
+    
+    public String[] devolverInformacion()
+    {
+        String informacion[]=new String[2];
+        
+        informacion[0]=this.txtNombre.getText();
+        informacion[1]=this.txtCodigo.getText();
+        
+        return informacion;
+    }
+    
+    public void mostrarMensaje(String mensaje)
+    {
+        JOptionPane.showMessageDialog(this,mensaje);
     }
 
     /**
