@@ -10,8 +10,7 @@ import java.util.ArrayList;
  *
  * @author Administrador
  */
-public class MetodosPersona 
-{
+public class MetodosPersona {
     
     private ArrayList <Persona> arrayPersona;
     
@@ -20,15 +19,47 @@ public class MetodosPersona
     int pos;
     public MetodosPersona()
     {
-        arrayPersona=new ArrayList <Persona>();
+        this.arrayPersona=new ArrayList <Persona>();
         
-        //agregarEstudiante(new String[] {"123","Lanfor","Puntarenas"});
-    }
+    }//CONSTRUCTOR
     
-    public void agregarEstudiante(String informacion[])
-    {
-        Persona objeto=new Persona(informacion[0], informacion[1], informacion[2]);
-        arrayPersona.add(objeto); 
+    public void setArregloPersona(ArrayList<Persona> arrayPersona) {
+        this.arrayPersona = arrayPersona;
+    }
+/****************************************************************************/
+     public String agregarPersona(Persona persona) throws PersonaException {
+
+        if (verificarPersona(persona.getId())) 
+            throw new PersonaException(
+                    "Ya existe un estudiante con ese numero de carnet",
+                    false);
+        
+        arrayPersona.add(persona);
+        return "Se agrego con exito";
+    }
+     
+/*************************************************************/     
+ public boolean verificarPersona(String id) {
+
+        boolean dev = false;
+        if (arrayPersona.size() != 0) {
+
+            for (int i = 0; i < arrayPersona.size(); i++) {
+                if (arrayPersona.get(i).getId().equalsIgnoreCase(id)) {
+
+                    dev = true;
+
+                    break;
+
+                }
+            }
+
+        }
+        return dev;
+    }    
+/*********************************************************************************/    
+    public ArrayList<Persona> getArregloPersona() {
+        return arrayPersona;
     }
     
     public void mostrarInformacion()
