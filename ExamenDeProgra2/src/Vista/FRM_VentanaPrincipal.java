@@ -19,7 +19,8 @@ public class FRM_VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         ManejadorPrincipal controlPrincipal = new ManejadorPrincipal();
         
-        jMenuItem2.addActionListener(controlPrincipal);
+        menuPaises.addActionListener(controlPrincipal);
+        menuPersonas.addActionListener(controlPrincipal);
     }
 
     /**
@@ -35,10 +36,8 @@ public class FRM_VentanaPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        menuPaises = new javax.swing.JMenuItem();
+        menuPersonas = new javax.swing.JMenuItem();
 
         jMenu1.setText("Archivo");
 
@@ -50,17 +49,17 @@ public class FRM_VentanaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Mantenimiento");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Paises");
-        jMenu2.add(jMenuItem2);
+        menuPaises.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        menuPaises.setText("Paises");
+        jMenu2.add(menuPaises);
 
-        jMenuItem3.setText("Personas");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        menuPersonas.setText("Agregar Persona");
+        menuPersonas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                menuPersonasActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        jMenu2.add(menuPersonas);
 
         jMenuBar1.add(jMenu2);
 
@@ -80,9 +79,9 @@ public class FRM_VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void menuPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPersonasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_menuPersonasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,7 +123,7 @@ public class FRM_VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem menuPaises;
+    private javax.swing.JMenuItem menuPersonas;
     // End of variables declaration//GEN-END:variables
 }
