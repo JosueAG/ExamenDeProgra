@@ -32,7 +32,7 @@ public class MetodosPersona {
         this.arrayPersona = arrayPersona;
     }
 /****************************************************************************/
-     public String agregarPersona(Persona persona) throws PersonaException {
+ /**    public String agregarPersona(Persona persona) throws PersonaException {
 
         if (verificarPersona(persona.getId())) 
             throw new PersonaException(
@@ -42,7 +42,7 @@ public class MetodosPersona {
         arrayPersona.add(persona);
         return "Se agrego con exito";
     }
-     
+     **/
 /*************************************************************/     
  public boolean verificarPersona(String id) {
 

@@ -22,14 +22,17 @@ public class ManejadorPersonas implements ActionListener {
    
     
     
-    public ManejadorPersonas(){
-    this.metodos = new MetodosPersona();
-    this.ventanaPersona = new FRM_VentanaPersonas();
+    public ManejadorPersonas(FRM_VentanaPersonas ventanaPersona, MetodosPersona metodos){
+    this.metodos = metodos;
+    this.ventanaPersona = ventanaPersona;
     }
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("Agregar")){
         
+          metodos.agregarPersona(ventanaPersona.devolverInformacion());
+          ventanaPersona.mostrarMensaje("El estudiante fue registrado de forma correcta");
           ventanaPersona.setJlMensajes("Se agrego con exito");
+          
         }
     }
     
