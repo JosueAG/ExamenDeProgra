@@ -6,18 +6,25 @@
 package Vista;
 
 import javax.swing.JOptionPane;
+import Controlador.Manejador_VentanaPaises;
+import Modelo.MetodosPaises;
 
 /**
  *
  * @author Administrador
  */
 public class FRM_VentanaPaises extends javax.swing.JFrame {
-
+    private MetodosPaises metodos;
+    
     /**
      * Creates new form FRM_VentanaPaises
      */
     public FRM_VentanaPaises() {
         initComponents();
+        this.metodos = new MetodosPaises();
+        
+        Manejador_VentanaPaises maneja = new Manejador_VentanaPaises(this, metodos);
+        btnAgregar.addActionListener(maneja);      
         
         
     }
