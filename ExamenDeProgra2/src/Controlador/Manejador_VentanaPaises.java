@@ -28,7 +28,7 @@ public class Manejador_VentanaPaises implements ActionListener
         if(e.getActionCommand().equalsIgnoreCase("Agregar"))
         {
             metodosPaises.agregarPaises(paises.devolverInformacion());
-            paises.mostrarMensaje("El estudiante fue registrado de forma correcta");
+            paises.mostrarMensaje("El pais fue registrado de forma correcta");
         }
     }
             
