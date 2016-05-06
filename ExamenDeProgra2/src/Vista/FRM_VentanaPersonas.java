@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ManejadorPersonas;
+import Modelo.MetodosPersona;
 import javax.swing.JOptionPane;
 /**
  *
@@ -13,12 +14,12 @@ import javax.swing.JOptionPane;
  */
 public class FRM_VentanaPersonas extends javax.swing.JFrame {
 
-   
+   private MetodosPersona metodos;
     
     public FRM_VentanaPersonas() {
         initComponents();
-        
-        ManejadorPersonas maneja = new ManejadorPersonas();
+        this.metodos = new MetodosPersona();
+        ManejadorPersonas maneja = new ManejadorPersonas(this,metodos );
         btAgregar.addActionListener(maneja);
     }
     public String[] devolverInformacion()

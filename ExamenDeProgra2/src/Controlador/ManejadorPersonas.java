@@ -22,9 +22,9 @@ public class ManejadorPersonas implements ActionListener {
    
     
     
-    public ManejadorPersonas(){
-    this.metodos = new MetodosPersona();
-    this.ventanaPersona = new FRM_VentanaPersonas();
+    public ManejadorPersonas(FRM_VentanaPersonas ventanaPersona, MetodosPersona metodos){
+    this.metodos = metodos;
+    this.ventanaPersona = ventanaPersona;
     }
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("Agregar")){
