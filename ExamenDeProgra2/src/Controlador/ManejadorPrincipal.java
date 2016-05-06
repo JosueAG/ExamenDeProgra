@@ -22,7 +22,7 @@ public ManejadorPrincipal(){
         
         if(e.getActionCommand().equalsIgnoreCase("Salir")){
             
-        }else
+        }
         if(e.getActionCommand().equalsIgnoreCase("Paises")){
             
         }

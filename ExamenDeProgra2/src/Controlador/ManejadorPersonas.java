@@ -29,7 +29,7 @@ public class ManejadorPersonas implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("Agregar")){
         
-            //ventanaPersona.setJlMensajes("Se agrego con exito");
+          ventanaPersona.setJlMensajes("Se agrego con exito");
         }
     }
     
