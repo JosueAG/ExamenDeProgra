@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ManejadorPersonas;
+import javax.swing.JOptionPane;
 /**
  *
  * @author KarIve
@@ -20,7 +21,22 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
         ManejadorPersonas maneja = new ManejadorPersonas();
         btAgregar.addActionListener(maneja);
     }
+    public String[] devolverInformacion()
+    {
+        String informacion[]=new String[3];
+        
+        informacion[0]=this.txID.getText();
+        informacion[1]=this.txCantidadDisponible.getText();
+        informacion[2]=this.txCapacidadPersonas.getText();
+        
+        return informacion;
+    }
     
+     public void mostrarMensaje(String mensaje)
+    {
+        JOptionPane.showMessageDialog(this,mensaje);
+    }
+     
      public void setJlMensajes(String jlMensajes) {
         this.jlMensajes.setText(jlMensajes);
     } 
