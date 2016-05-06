@@ -21,7 +21,7 @@ public ManejadorPrincipal(){
     public void actionPerformed(ActionEvent e) {
         
         if(e.getActionCommand().equalsIgnoreCase("Salir")){
-            System.exit(0);
+            
         }else
         if(e.getActionCommand().equalsIgnoreCase("Paises")){
             
