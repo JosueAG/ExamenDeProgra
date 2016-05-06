@@ -40,7 +40,7 @@ public class FRM_VentanaPrincipal extends javax.swing.JFrame {
         menuPaises = new javax.swing.JMenuItem();
         menuPersonas = new javax.swing.JMenuItem();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrador\\Desktop\\Ejercicio01\\src\\img\\DDHH-migrantes-portada.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/DDHH-migrantes-portada.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         jMenu1.setText("Archivo");
