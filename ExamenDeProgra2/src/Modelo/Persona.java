@@ -43,4 +43,9 @@ public class Persona {
     public String getDestino() {
         return destino;
     }    
+    
+    public String getInformacion ()
+    {
+        return "ID: "+getId()+"Lugar de Procedencia: "+getLugarProcedencia()+"Destino: "+getDestino();
+    }
 }//FIN CLASE PERSONA
