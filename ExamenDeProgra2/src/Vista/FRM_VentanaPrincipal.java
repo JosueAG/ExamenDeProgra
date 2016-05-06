@@ -44,6 +44,9 @@ public class FRM_VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Mantenimiento");
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText("Paises");
         jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
