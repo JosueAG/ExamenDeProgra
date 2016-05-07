@@ -22,19 +22,21 @@ public ManejadorPrincipal(){
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        if(e.getActionCommand().equalsIgnoreCase("Salir")){
-            
-         
+        if(e.getActionCommand().equalsIgnoreCase("Salir"))
+        {
+            System.exit(0);
             
         }
-        if(e.getActionCommand().equalsIgnoreCase("Paises")){
+        if(e.getActionCommand().equalsIgnoreCase("Paises"))
+        {
             this.guiPais = new FRM_VentanaPaises();
             guiPais.show();
         }
         
-        if(e.getActionCommand().equalsIgnoreCase("Agregar Persona")){
-        this.guiPersona = new FRM_VentanaPersonas();
-        guiPersona.show();
+        if(e.getActionCommand().equalsIgnoreCase("Agregar Persona"))
+        {
+            this.guiPersona = new FRM_VentanaPersonas();
+            guiPersona.show();
         }
     }
     
