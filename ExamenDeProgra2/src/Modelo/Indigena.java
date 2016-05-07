@@ -11,39 +11,53 @@ package Modelo;
  */
 public class Indigena 
 {
-    Object lugarDeProcedencia, dias, paisDestino;
+    String id, lugarDeProcedencia, paisDestino;
+    int dias;
 
-    public Indigena(Object lugarDeProcedencia, Object dias, Object paisDestino) {
+    public Indigena(String id, String lugarDeProcedencia, String paisDestino, int dias) {
+        this.id=id;
         this.lugarDeProcedencia = lugarDeProcedencia;
         this.dias = dias;
         this.paisDestino= paisDestino;
     }
 
-    public Object getLugarDeProcedencia() {
-        return lugarDeProcedencia;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setLugarDeProcedencia(Object lugarDeProcedencia) {
+    public void setLugarDeProcedencia(String lugarDeProcedencia) {
         this.lugarDeProcedencia = lugarDeProcedencia;
     }
 
-    public Object getDias() {
-        return dias;
+    public void setPaisDestino(String paisDestino) {
+        this.paisDestino = paisDestino;
     }
 
-    public void setDias(Object dias) {
+    public void setDias(int dias) {
         this.dias = dias;
     }
 
-    public Object getPaisDestino() {
+    
+    
+    
+    public String getId() {
+        return id;
+    }
+
+    public String getLugarDeProcedencia() {
+        return lugarDeProcedencia;
+    }
+
+    public String getPaisDestino() {
         return paisDestino;
     }
 
-    public void setPaisDestino(Object paisDestino) {
-        this.paisDestino = paisDestino;
+    public int getDias() {
+        return dias;
     }
-    
-    public Object getInformacion ()
+
+   
+    public String getInformacion ()
     {
         return "Lugar de Procedencia: "+getLugarDeProcedencia()+"Dias: "+getDias()+"Pais Destino: "+getPaisDestino()+"";
     }
