@@ -41,7 +41,7 @@ public class MetodosPersona {
 
         if (verificarPersona(persona.getId())) 
             throw new PersonaException(
-                    "Ya existe un estudiante con ese numero de carnet",
+                    "Ya existe con ese numero de carnet",
                     false);
         
         arrayPersona.add(persona);
