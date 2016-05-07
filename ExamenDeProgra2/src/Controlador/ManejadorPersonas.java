@@ -5,9 +5,13 @@
  */
 package Controlador;
 
+import Modelo.DiasPais;
 import Vista.FRM_VentanaPersonas;
 import Modelo.MetodosPersona;
 import Modelo.Persona;
+import Modelo.Capacidad;
+import Modelo.BDCapacidad;
+import Modelo.CapacidadPersona;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,13 +27,21 @@ public class ManejadorPersonas implements ActionListener, ItemListener{
     private FRM_VentanaPersonas ventanaPersona;
     private MetodosPersona metodos;
     //String nombre = ventanaPersona.regresarNombre();
+    private DiasPais singleton;
+    private Capacidad capacity;
+    private BDCapacidad bdCapacidad;
     
+    int i=0;
+    int y=0;
    
     
     
     public ManejadorPersonas(FRM_VentanaPersonas ventanaPersona, MetodosPersona metodos){
     this.metodos = metodos;
     this.ventanaPersona = ventanaPersona;
+    
+    bdCapacidad = new BDCapacidad(); 
+    singleton = DiasPais.getInstace();
     }
     public void actionPerformed(ActionEvent e) {
         
@@ -106,10 +118,60 @@ public class ManejadorPersonas implements ActionListener, ItemListener{
            }
         }    //MIGRANTE
         
-      }//FIN AGREGAR    
-       
+      }//FIN AGREGAR 
+        
+/******************************************************************************/
+        
+        else if(e.getActionCommand().equals("Simular")){
+            if(metodos.tamanioArreglo()>0){
+            try{
+            singleton.setLaCantidadDias(Integer.parseInt(ventanaPersona.getTxCapacidadPersonas()));
+            }catch(Exception ex){
+                System.out.println("no guardo la gasolina");
+            }
+            capacity = new Capacidad();
+            bdCapacidad.agregarCapacidad(Integer.parseInt(ventanaPersona.getTxCapacidadPersonas()), capacity);
+            
+            ventanaPersona.setJlCiclos("ENTRO A SIMULACION");
+            try{
+                ventanaPersona.setJlCiclos(""+cantidadDeCiclos());//ocurre un error
+            }catch(Exception ex){
+                System.out.println("ERROR DE CICLOS");
+            }
+           }// para que exista al menos una 
+        }//FIN SIMULAR
+/******************************************************************************/
     }//FIN ACTION PERFORMED
 
+    public String cantidadDeCiclos() throws Exception{
+            int ciclos=0;
+            boolean noCapacidad=true;
+            
+            while(noCapacidad){
+                 for(i=0;i<metodos.tamanioArreglo()&& noCapacidad;i++){//primer for de los vehiculos
+                System.out.println("ANTES DEEE");
+                System.out.println("tamanio arreglo capacidad"+ metodos.tamanioArreglo());
+
+                
+                
+               if(bdCapacidad.recorrerGasolinera((CapacidadPersona) metodos.regresaPersona(i), y)){
+                       
+                       System.out.println("se ha dado el espacio");
+                       y=y%bdCapacidad.tamanioCapacidad();
+                        System.out.println("tamanio pais:"+y);
+                   }
+                   else{
+                       System.out.println("El espacio es insuficiente");
+                       noCapacidad=false;
+                   }
+               ciclos++;
+            }//fin de ciclos vehiculos
+            
+            
+            }
+            return ""+ciclos;
+            }
+    
     @Override
     public void itemStateChanged(ItemEvent e) {
        String nombre="";

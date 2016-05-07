@@ -81,6 +81,11 @@ public class MetodosPersona {
         }
     
     }
+/******************************************************************************/
+    public int tamanioArreglo(){
+        return arrayPersona.size();
+    }
+/******************************************************************************/
     
     public boolean consultarEstudiante(String id)
     {
@@ -100,8 +105,8 @@ public class MetodosPersona {
         return existe;
     }
     
-    public int tamanioArreglo(){
-        return arrayPersona.size();
+    public Persona regresaPersona(int posicion){  
+        return arrayPersona.get(posicion);
     }
     
 }

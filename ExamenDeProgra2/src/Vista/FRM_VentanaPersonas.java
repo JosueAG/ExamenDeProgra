@@ -93,7 +93,11 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
      }
      
 /******************************************************************************/
-    public String getTxID() {
+    public void setJlCiclos(String jlCiclos) {
+        this.jlCiclos.setText(jlCiclos);
+    }
+     
+     public String getTxID() {
           return txID.getText();
     }
      public void setID(String txID) {
@@ -114,6 +118,21 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
      
      public void setTxDestino(String txDestino){
          this.txDestino.setText(txDestino);
+     }
+     
+     public String getTxtCantidadDisponible(){
+     return ""+txCantidadDisponible.getText();
+     }
+     public void setTxCantidadDisponible(int txCantidadDisponible){
+     this.txCantidadDisponible.setText(""+txCantidadDisponible);
+     }
+     
+     public String getTxCapacidadPersonas(){
+     return ""+txCapacidadPersonas.getText();
+     }
+     
+     public void setTxCapacidadPersonas(int txCantidadDisponible){
+     this.txCapacidadPersonas.setText(""+txCapacidadPersonas);
      }
 /******************************************************************************/
     public void limpiar(){
@@ -150,6 +169,8 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
         btSimular = new javax.swing.JButton();
         txProcedencia = new javax.swing.JTextField();
         txDestino = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jlCiclos = new javax.swing.JLabel();
 
         jLabel1.setText("ID:");
 
@@ -214,6 +235,10 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Ciclo:");
+
+        jlCiclos.setText("****************************");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -249,7 +274,11 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txCapacidadPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addComponent(btSimular)))))
+                                .addComponent(btSimular))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jlCiclos, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -311,7 +340,11 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txCantidadDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jlCiclos))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -357,8 +390,10 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jlCiclos;
     private javax.swing.JLabel jlMensajes;
     public javax.swing.JRadioButton rbCiudadano;
     public javax.swing.JRadioButton rbIndigena;
