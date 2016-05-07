@@ -1,0 +1,92 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Utilidades;
+
+import java.beans.XMLDecoder;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author KarIve
+ */
+public class Lector <T>{
+    
+    BufferedReader br;
+    ObjectInputStream lectorBin;
+    private String read_file_with_throws(String filepath) throws FileNotFoundException, IOException{
+        System.out.println("lector path"+filepath);
+        br = new BufferedReader(new FileReader(filepath));
+        StringBuilder sb = new StringBuilder();
+        String line = br.readLine();
+
+        while (line != null) {
+            sb.append(line);
+            sb.append(System.lineSeparator());
+            line = br.readLine();
+        }
+        return sb.toString();
+    }
+    
+    public String read_file(String filepath){
+        String dev = null;
+        try {
+            dev = read_file_with_throws(filepath);
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+            Logger.getLogger(Lector.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try {
+                br.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Lector.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return dev;
+    }
+    
+    public T read_Bin (String filepath){
+         T  aux=null;
+         System.out.println("path"+filepath);
+        try {
+            lectorBin= new ObjectInputStream(new FileInputStream(filepath));//errore verificar
+            
+                aux= (T)lectorBin.readObject();//regresa el objeto       
+        } catch (IOException | ClassNotFoundException ex) {
+            System.out.println("No regreso el .dat");
+        }
+        System.err.println("aux"+aux);
+        return aux;
+    }
+    
+    public T read_xml(String filepath){
+       // https://docs.oracle.com/javase/7/docs/api/java/beans/XMLDecoder.html
+       XMLDecoder d;
+       T  objs=null;
+        try {
+            d = new XMLDecoder(
+                    new BufferedInputStream(
+                            new FileInputStream(filepath)));
+            
+            objs = (T) d.readObject();
+            d.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Lector.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return objs;
+    }
+    
+}//FIN DE LA CLASE LECTOR

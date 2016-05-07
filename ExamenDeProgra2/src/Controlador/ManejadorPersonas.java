@@ -12,6 +12,8 @@ import Modelo.Persona;
 import Modelo.Capacidad;
 import Modelo.BDCapacidad;
 import Modelo.CapacidadPersona;
+import Modelo.MetodosPaises;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
