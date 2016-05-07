@@ -24,6 +24,8 @@ public ManejadorPrincipal(){
         
         if(e.getActionCommand().equalsIgnoreCase("Salir")){
             
+         
+            
         }
         if(e.getActionCommand().equalsIgnoreCase("Paises")){
             this.guiPais = new FRM_VentanaPaises();
