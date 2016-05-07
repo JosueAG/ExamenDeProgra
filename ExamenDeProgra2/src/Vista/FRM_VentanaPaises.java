@@ -88,6 +88,7 @@ public class FRM_VentanaPaises extends javax.swing.JFrame {
             }
         });
 
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agregar.png"))); // NOI18N
         btnAgregar.setText("Agregar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -105,7 +106,7 @@ public class FRM_VentanaPaises extends javax.swing.JFrame {
                     .addComponent(txtCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(btnAgregar)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
