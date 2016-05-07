@@ -140,6 +140,11 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
     txDestino.setText("");
     txProcedencia.setText("");
     }
+    
+    public void limpiarSimulador(){
+     txCapacidadPersonas.setText("");
+     txCantidadDisponible.setText("");
+    }
 /******************************************************************************/
     
     /**

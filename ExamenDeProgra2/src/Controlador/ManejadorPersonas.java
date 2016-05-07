@@ -135,12 +135,16 @@ public class ManejadorPersonas implements ActionListener, ItemListener{
             bdCapacidad.agregarCapacidad(Integer.parseInt(ventanaPersona.getTxCapacidadPersonas()), capacity);
             
             ventanaPersona.setJlCiclos("ENTRO A SIMULACION");
+            
             try{
                 ventanaPersona.setJlCiclos(""+cantidadDeCiclos());//ocurre un error
+                
             }catch(Exception ex){
                 System.out.println("ERROR DE CICLOS");
             }
            }// para que exista al menos una 
+       
+        ventanaPersona.limpiarSimulador();
         }//FIN SIMULAR
 /******************************************************************************/
     }//FIN ACTION PERFORMED
