@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author KarIve
+ * 
  */
 public class Lector <T>{
     
@@ -72,7 +72,7 @@ public class Lector <T>{
     }
     
     public T read_xml(String filepath){
-       // https://docs.oracle.com/javase/7/docs/api/java/beans/XMLDecoder.html
+       
        XMLDecoder d;
        T  objs=null;
         try {

@@ -30,7 +30,7 @@ public class SalvadorXML {
         ayudaos = new AyudanteOs();
     }
     
-    public void guardaGasolinera(ArrayList<BDCapacidad> capacidad) {
+    public void guardaPais(ArrayList<BDCapacidad> capacidad) {
         try {
             escritor.with_obj_in_file_xml(
                     ayudaos.get_config_file("capacidadPais.xml"),
@@ -40,7 +40,7 @@ public class SalvadorXML {
         }
     }
     
-    public ArrayList<BDCapacidad> obteneerGasolineras() {
+    public ArrayList<BDCapacidad> obtenerCapacidad() {
         Lector<ArrayList<BDCapacidad>> lector = new Lector<>();
         String filepath=null;
         try {
@@ -51,21 +51,21 @@ public class SalvadorXML {
         return lector.read_xml(filepath);       
     }
     
-    public void guardaVehiculos(ArrayList<BDCapacidad> vehiculo) {
+    public void guardaCapacidad(ArrayList<BDCapacidad> capacidad) {
         try {
             escritor.with_obj_in_file_xml(
-                    ayudaos.get_config_file("vehiculos.xml"),
-                    vehiculo);
+                    ayudaos.get_config_file("capacidad.xml"),
+                    capacidad);
         } catch (IOException ex) {
             System.out.println("Error en guardar");
         }
     }
     
-     public ArrayList<BDCapacidad> obtenerVehiculos() {
+     public ArrayList<BDCapacidad> obtenerPaises() {
         Lector<ArrayList<BDCapacidad>> lector = new Lector<>();
         String filepath=null;
         try {
-            filepath = ayudaos.get_config_file("vehiculos.xml");
+            filepath = ayudaos.get_config_file("capacidad.xml");
         } catch (IOException ex) {
             System.out.println("Error en obtener");
         }

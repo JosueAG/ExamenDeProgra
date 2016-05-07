@@ -19,13 +19,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
  *
- * @author KarIve
+ * 
  */
-public class Escritor {
+public class Escritor 
+{
     FileWriter writer;
     ObjectOutputStream salidaBin;
 
-    private void write_with_throws(String filepath, String text) throws IOException{
+    private void write_with_throws(String filepath, String text) throws IOException
+    {
         File file = new File(filepath);
         if(!file.exists()){
             file.createNewFile();
@@ -37,7 +39,8 @@ public class Escritor {
 
     }
     
-    public void write_file(String filepath, String text){
+    public void write_file(String filepath, String text)
+    {
         try {
             write_with_throws(filepath, text);
         } catch (IOException ex) {
@@ -50,7 +53,8 @@ public class Escritor {
             }
         } 
     }
-    public void writeObjectBin(String filePath,Object objeto){
+    public void writeObjectBin(String filePath,Object objeto)
+    {
         try {
             salidaBin=new ObjectOutputStream(new FileOutputStream(filePath));
             salidaBin.writeObject(objeto);
@@ -60,8 +64,8 @@ public class Escritor {
         }
     }
     
-     public void with_obj_in_file_xml(String filepath, Object obj){
-        // https://docs.oracle.com/javase/7/docs/api/java/beans/XMLEncoder.html
+     public void with_obj_in_file_xml(String filepath, Object obj)
+     {
         XMLEncoder e;
         try {
             e = new XMLEncoder(
@@ -70,7 +74,7 @@ public class Escritor {
             e.writeObject(obj);
             e.close();
         } catch (FileNotFoundException ex) {
-            System.out.println("no se guardo el vehiculo");
+            System.out.println("no se guardo el objeto");
         }
     }
 }
