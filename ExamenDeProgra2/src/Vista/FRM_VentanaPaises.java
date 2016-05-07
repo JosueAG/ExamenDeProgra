@@ -43,6 +43,25 @@ public class FRM_VentanaPaises extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(this,mensaje);
     }
+    
+     public String getTxtCodigo() {
+          return txtCodigo.getText();
+    }
+     public void setTxtCodigo(String txtCodigo) {
+        this.txtCodigo.setText(txtCodigo);
+    }
+     
+     public String getTxtNombre(){
+         return txtNombre.getText();
+     }
+     public void setTxtNombre(String txtNombre){
+     this.txtNombre.setText(txtNombre);
+     }
+     
+     public void limpiar(){
+     txtNombre.setText("");
+     txtCodigo.setText("");
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.

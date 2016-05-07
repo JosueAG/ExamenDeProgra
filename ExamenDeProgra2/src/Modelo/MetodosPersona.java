@@ -23,11 +23,16 @@ public class MetodosPersona {
         
     }//CONSTRUCTOR
     
-    public void agregarPersona(String informacion[])
+  /**  public void agregarPersona(String informacion[])
     {
         Persona objeto=new Persona(informacion[0], informacion[1], informacion[2]);
         arrayPersona.add(objeto); 
+    }**/
+    
+    public void agregarPersona(Persona persona){
+    arrayPersona.add(persona);
     }
+/******************************************************************************/    
     public void setArregloPersona(ArrayList<Persona> arrayPersona) {
         this.arrayPersona = arrayPersona;
     }
@@ -93,6 +98,10 @@ public class MetodosPersona {
             }
         }
         return existe;
+    }
+    
+    public int tamanioArreglo(){
+        return arrayPersona.size();
     }
     
 }

@@ -12,30 +12,22 @@ package Modelo;
 public class Migrante extends Persona{
      Object  estatusRefugiado, dias;
      
-    public Migrante(String id, String lugarProcedencia, String destino, String estatusRefugiado, int dias){
-        super(id,lugarProcedencia,destino);
+    public Migrante(String id, String lugarProcedencia, String destino,int dias, String estatusRefugiado){
+        super(id,lugarProcedencia,destino,dias);
         
         this.estatusRefugiado = estatusRefugiado;
-        this.dias = dias;
+        
     }
 /******************************************************************************/
     public void setEstatusRefugiado(Object estatusRefugiado) {
         this.estatusRefugiado = estatusRefugiado;
     }
 
-    public void setDias(Object dias) {
-        this.dias = dias;
-    }
 /******************************************************************************/
-    
-    
-    public Object getEstatusRefugiado() {
+  public Object getEstatusRefugiado() {
         return estatusRefugiado;
     }
 
-    public Object getDias() {
-        return dias;
-    }
  /*****************************************************************************/   
     public String getInfo(){
     return "Id Migrante: "+getId();

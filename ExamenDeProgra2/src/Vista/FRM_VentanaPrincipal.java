@@ -21,6 +21,8 @@ public class FRM_VentanaPrincipal extends javax.swing.JFrame {
         
         menuPaises.addActionListener(controlPrincipal);
         menuPersonas.addActionListener(controlPrincipal);
+    
+        setLocationRelativeTo(null);
     }
 
     /**

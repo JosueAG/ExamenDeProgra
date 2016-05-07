@@ -7,6 +7,8 @@ package Controlador;
 
 import Modelo.MetodosPaises;
 import Vista.FRM_VentanaPaises;
+import Modelo.Paises;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,11 +29,17 @@ public class Manejador_VentanaPaises implements ActionListener
         
         if(e.getActionCommand().equalsIgnoreCase("Agregar"))
         {
-            metodosPaises.agregarPaises(paises.devolverInformacion());
+            if(metodosPaises.verificarPais(paises.getTxtCodigo())==false){
+           Paises pais = new Paises(paises.getTxtCodigo(),paises.getTxtNombre());
+           metodosPaises.agregarPaises(pais);
             paises.mostrarMensaje("El pais fue registrado de forma correcta");
-            System.out.println("Agregar");
-
-        }
+            System.out.println(pais.getInformacion());
+            paises.limpiar();
+        }else{
+            paises.mostrarMensaje("El codigo de país ya existe");
+            paises.limpiar();
+            }
+       }
     }
             
     

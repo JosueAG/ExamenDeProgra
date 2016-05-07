@@ -11,21 +11,15 @@ package Modelo;
  */
 public class Ciudadano extends Persona
 {
-    Object dias;
+    
     public Ciudadano (String id, String lugarProcedencia, String destino, int dias)
     {
-        super(id,  lugarProcedencia, destino);
+        super(id,  lugarProcedencia, destino, dias);
         
-        this.dias= dias;
+  
     }
 
-    public Object getDias() {
-        return dias;
-    }
-
-    public void setDias(Object dias) {
-        this.dias = dias;
-    }
+   
     
     public String getInformacion ()
     {

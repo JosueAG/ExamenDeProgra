@@ -12,9 +12,9 @@ package Modelo;
 public class Paises 
 {
     private Object nombre;
-    private Object codigo;
+    private String codigo;
 
-    public Paises(Object nombre, Object codigo) {
+    public Paises(Object nombre, String codigo) {
         this.nombre = nombre;
         this.codigo = codigo;
     }
@@ -27,16 +27,16 @@ public class Paises
         this.nombre = nombre;
     }
 
-    public Object getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Object codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
     
     public String getInformacion ()
     {
-        return "Nombre: "+getNombre()+"Codigo: "+getCodigo();
+        return "Nombre: "+getNombre()+"\nCodigo: "+getCodigo();
     }
 }

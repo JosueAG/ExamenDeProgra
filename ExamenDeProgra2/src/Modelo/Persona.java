@@ -13,11 +13,13 @@ public class Persona {
     private String id;
     private String lugarProcedencia;
     private String destino;
+    private int dias;
     
-    public Persona(String id, String lugarProcedencia, String destino){
+    public Persona(String id, String lugarProcedencia, String destino, int dias){
     this.id=id;
     this.lugarProcedencia= lugarProcedencia;
     this.destino=destino;
+    this.dias=dias;
     }
 /******************************************************************************/
     public void setId(String id) {
@@ -31,6 +33,12 @@ public class Persona {
     public void setDestino(String destino) {
         this.destino = destino;
     }
+
+    public void setDias(int dias) {
+        this.dias = dias;
+    }
+    
+    
 /******************************************************************************/
     public String getId() {
         return id;
@@ -43,9 +51,14 @@ public class Persona {
     public String getDestino() {
         return destino;
     }    
+
+    public int getDias() {
+        return dias;
+    }
+    
     
     public String getInformacion ()
     {
-        return "ID: "+getId()+"Lugar de Procedencia: "+getLugarProcedencia()+"Destino: "+getDestino();
+        return "ID: "+getId()+"\nLugar de Procedencia: "+getLugarProcedencia()+"\nDestino: "+getDestino()+"\nDias: "+getDias();
     }
 }//FIN CLASE PERSONA

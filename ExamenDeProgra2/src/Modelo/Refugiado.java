@@ -11,8 +11,8 @@ package Modelo;
  */
 public class Refugiado extends Persona{
     Object carnetRefugiado;
-    public Refugiado(String id, String lugarProcedencia, String destino, String carnetRefugiado){
-        super(id,lugarProcedencia,destino);
+    public Refugiado(String id, String lugarProcedencia, String destino,int dias, String carnetRefugiado){
+        super(id,lugarProcedencia,destino,dias);
         
         this.carnetRefugiado = carnetRefugiado;
     }

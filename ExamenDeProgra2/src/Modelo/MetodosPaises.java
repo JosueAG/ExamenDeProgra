@@ -6,7 +6,8 @@
 package Modelo;
 
 import java.util.ArrayList;
-
+import Vista.FRM_VentanaPersonas;
+import javax.swing.JComboBox;
 /**
  *
  * @author Administrador
@@ -14,45 +15,50 @@ import java.util.ArrayList;
 public class MetodosPaises 
 {
     private ArrayList <Paises> arrayPaises;
+    private JComboBox <String> arrayCombo;
+    //ArrayList<Paises>
     
     String[] arregloInformacionConsultada=new String[1];
     
     int pos;
     public MetodosPaises()
     {
-        arrayPaises=new ArrayList <Paises>();
+        this.arrayPaises=new ArrayList <Paises>();
     }
     
-    public void agregarPaises(String informacion[])
+ /**   public void agregarPaises(String informacion[])
     {
         Paises objeto=new Paises(informacion[0], informacion[1]);
         arrayPaises.add(objeto); 
+    }**/
+    
+     public void agregarPaises(Paises paises){
+    arrayPaises.add(paises);   
     }
-    
-    public void mostrarInformacion()
-    {
-        for(int contador=0;contador<arrayPaises.size();contador++)
-        {
-            System.out.println(arrayPaises.get(contador).getInformacion());
-        
-        }
-    
-    }
-    
-    public boolean consultarEstudiante(String codigo)
-    {
-        boolean existe=false;
-        //[][][][]
-        for(int contador=0;contador<arrayPaises.size();contador++)
-        {
-            if(arrayPaises.get(contador).getCodigo().equals(codigo))
-            {
-                existe=true;
-                pos=contador;
+     
+     public void agregarPaisCombo(String nombre){
+     //arrayCombo.add(arrayPaises.getNombre());
+     }
+ /******************************************************************************/    
+     public boolean verificarPais(String codigo) {
+
+        boolean dev = false;
+        if (arrayPaises.size() != 0) {
+
+            for (int i = 0; i < arrayPaises.size(); i++) {
+                if (arrayPaises.get(i).getCodigo().equals(codigo)) {
+
+                    dev = true;
+
+                    break;
+
+                }
             }
+
         }
-        return existe;
-    }
+        return dev;
+    } 
+/******************************************************************************/
     
     public String[] getArregloInformacion()
     {
