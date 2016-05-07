@@ -35,10 +35,7 @@ public class MetodosPaises
      public void agregarPaises(Paises paises){
     arrayPaises.add(paises);   
     }
-     
-     public void agregarPaisCombo(String nombre){
-     //arrayCombo.add(arrayPaises.getNombre());
-     }
+
  /******************************************************************************/    
      public boolean verificarPais(String codigo) {
 

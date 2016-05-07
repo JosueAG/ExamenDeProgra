@@ -35,20 +35,21 @@ public class ManejadorPersonas implements ActionListener, ItemListener{
         
         if(e.getActionCommand().equalsIgnoreCase("Agregar")){
             int dias;
-            String lugarProcede="";
-            String lugarDestino="";
+            String lugarProcede=ventanaPersona.getTxProcedencia();
+            String lugarDestino=ventanaPersona.getTxDestino();
+            
             if(ventanaPersona.regresarNombre()=="Ciudadano"){
             if(metodos.verificarPersona(ventanaPersona.getTxID())==false){
-                if(lugarProcede == lugarDestino){
+                if(lugarProcede.equals(lugarDestino)){
                 dias = -1;
                 }else{
                 dias=30;
                 }
-          Persona person = new Persona(ventanaPersona.getTxID(),lugarProcede,lugarDestino,dias);
+          Persona person = new Persona(ventanaPersona.getTxID(),ventanaPersona.getTxProcedencia(),ventanaPersona.getTxDestino(),dias);
           metodos.agregarPersona(person);
           ventanaPersona.mostrarMensaje("La persona fue registrado de forma correcta");
           ventanaPersona.setJlMensajes("Se agrego el Ciudadano con exito");
-          System.out.println(person.getInformacion());
+          System.out.println(person.getInformacion()+"\n");
           ventanaPersona.limpiar();
           
             }else{
@@ -60,7 +61,7 @@ public class ManejadorPersonas implements ActionListener, ItemListener{
             if(ventanaPersona.regresarNombre()=="Indigena"){
                 dias = -1;
             if(metodos.verificarPersona(ventanaPersona.getTxID())==false){
-          Persona person = new Persona("No tiene ID",lugarProcede,lugarDestino,dias);
+          Persona person = new Persona("No tiene ID",ventanaPersona.getTxProcedencia(),ventanaPersona.getTxDestino(),dias);
           metodos.agregarPersona(person);
           ventanaPersona.mostrarMensaje("La persona fue registrado de forma correcta");
           ventanaPersona.setJlMensajes("Se agrego el Indigena con exito");
@@ -76,7 +77,7 @@ public class ManejadorPersonas implements ActionListener, ItemListener{
             if(ventanaPersona.regresarNombre()=="Refugiado"){
                 dias = 0;
             if(metodos.verificarPersona(ventanaPersona.getTxID())==false){
-          Persona person = new Persona(ventanaPersona.getTxID(),lugarProcede,lugarDestino,dias);
+          Persona person = new Persona(ventanaPersona.getTxID(),ventanaPersona.getTxProcedencia(),ventanaPersona.getTxDestino(),dias);
           metodos.agregarPersona(person);
           ventanaPersona.mostrarMensaje("La persona fue registrado de forma correcta");
           ventanaPersona.setJlMensajes("Se agrego el Refugiado con exito");
@@ -92,7 +93,7 @@ public class ManejadorPersonas implements ActionListener, ItemListener{
             if(ventanaPersona.regresarNombre()=="Migrante"){
                 dias = 10;
            if(metodos.verificarPersona(ventanaPersona.getTxID())==false){
-          Persona person = new Persona(ventanaPersona.getTxID(),lugarProcede,lugarDestino,dias);
+          Persona person = new Persona(ventanaPersona.getTxID(),ventanaPersona.getTxProcedencia(),ventanaPersona.getTxDestino(),dias);
           metodos.agregarPersona(person);
           ventanaPersona.mostrarMensaje("La persona fue registrado de forma correcta");
           ventanaPersona.setJlMensajes("Se agrego el Migrante con exito");

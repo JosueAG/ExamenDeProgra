@@ -19,6 +19,7 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
     
     
    private MetodosPersona metodos;
+   private FRM_VentanaPaises ventanaPais;
     
     public FRM_VentanaPersonas() {
         initComponents();
@@ -29,6 +30,7 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
         group.add(rbRefugiado);
         rbCiudadano.setSelected(true);
         this.metodos = new MetodosPersona();
+        this.ventanaPais = new FRM_VentanaPaises();
         ManejadorPersonas maneja = new ManejadorPersonas(this,metodos );
         
         btAgregar.addActionListener(maneja);
@@ -97,11 +99,30 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
      public void setID(String txID) {
         this.txID.setText(txID);
     }
+     
+     public String getTxProcedencia(){
+         return txProcedencia.getText();
+     }
+     
+     public void setTxProcedencia(String txProcedencia){
+     this.txProcedencia.setText(txProcedencia);
+     }
+     
+     public String getTxDestino(){
+        return txDestino.getText();
+    }
+     
+     public void setTxDestino(String txDestino){
+         this.txDestino.setText(txDestino);
+     }
 /******************************************************************************/
     public void limpiar(){
     txID.setText("");
+    txDestino.setText("");
+    txProcedencia.setText("");
     }
-
+/******************************************************************************/
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -127,8 +148,8 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
         txCapacidadPersonas = new javax.swing.JTextField();
         txCantidadDisponible = new javax.swing.JTextField();
         btSimular = new javax.swing.JButton();
-        jcProcedencia = new javax.swing.JComboBox<>();
-        jcDestino = new javax.swing.JComboBox<>();
+        txProcedencia = new javax.swing.JTextField();
+        txDestino = new javax.swing.JTextField();
 
         jLabel1.setText("ID:");
 
@@ -187,9 +208,9 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
             }
         });
 
-        jcDestino.addActionListener(new java.awt.event.ActionListener() {
+        txDestino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcDestinoActionPerformed(evt);
+                txDestinoActionPerformed(evt);
             }
         });
 
@@ -214,8 +235,8 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txID, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                        .addComponent(jcProcedencia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jcDestino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(txProcedencia)
+                                        .addComponent(txDestino)))
                                 .addComponent(jlMensajes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -259,17 +280,16 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(jcProcedencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txProcedencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(rbCiudadano, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rbIndigena)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jcDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3))
+                    .addComponent(txDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlMensajes)
                     .addComponent(rbMigrante))
@@ -291,7 +311,7 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txCantidadDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -321,9 +341,9 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btSimularActionPerformed
 
-    private void jcDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcDestinoActionPerformed
+    private void txDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txDestinoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jcDestinoActionPerformed
+    }//GEN-LAST:event_txDestinoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,8 +359,6 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JComboBox<String> jcDestino;
-    private javax.swing.JComboBox<String> jcProcedencia;
     private javax.swing.JLabel jlMensajes;
     public javax.swing.JRadioButton rbCiudadano;
     public javax.swing.JRadioButton rbIndigena;
@@ -348,7 +366,9 @@ public class FRM_VentanaPersonas extends javax.swing.JFrame {
     public javax.swing.JRadioButton rbRefugiado;
     private javax.swing.JTextField txCantidadDisponible;
     private javax.swing.JTextField txCapacidadPersonas;
+    public javax.swing.JTextField txDestino;
     private javax.swing.JTextField txID;
+    public javax.swing.JTextField txProcedencia;
     // End of variables declaration//GEN-END:variables
 
     
